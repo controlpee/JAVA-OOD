@@ -6,9 +6,6 @@ import javax.swing.JFrame;
 public class Average extends JFrame
 {
 
-public static void main(String[] args)
-
-
 private static final int WIDTH = 600;
 private static final int HEIGHT = 400;
 private static final String PLACEHOLDER = "Enter the Score";
@@ -161,6 +158,8 @@ public void actionPerformed(ActionEvent e) {
 	
 }
 {
+
+public static void main(String[] args)
 
 Average avg = new Average();
 
