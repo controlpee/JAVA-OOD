@@ -1,0 +1,169 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.JFrame;
+
+public class Average extends JFrame
+{
+
+public static void main(String[] args)
+
+
+private static final int WIDTH = 600;
+private static final int HEIGHT = 400;
+private static final String PLACEHOLDER = "Enter the Score";
+private CalculateBtnHandler cbHandler;
+private ExitBtnHandler ebHandler;
+private JButton calculateBtn, exitBtn;
+private JLabel engL, mathL, bscL, faL, csL, qrL, vrL, crsL, 
+
+musL, yrL, frL, totalL, avgL;
+private JTextField engTF, mathTF, bscTF, faTF, csTF, qrTF, 
+
+vrTF, crsTF, musTF, yrTF, frTF, totalTF, avgTF;
+
+
+public Average() {
+
+// Create the all JTextFields
+
+engTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+mathTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+bscTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+faTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+csTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+qrTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+vrTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+crsTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+yrTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+frTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+musTF = new JTextField(PLACEHOLDER, SwingConstants.RIGHT);
+totalTF = new JTextField(10);
+avgTF = new JTextField(10);
+
+
+// Create the all JLabels
+engL =	new JLabel("English ", SwingConstants.CENTER);
+mathL	= new JLabel("Mathematics ", SwingConstants.CENTER);
+bscL	= new JLabel("Basic Science ", SwingConstants.CENTER);
+faL = new JLabel("Fine Art ", SwingConstants.CENTER);
+csL = new JLabel("Computer Studies ", SwingConstants.CENTER);
+qrL = new JLabel("Quantitative Reasoning ", 
+
+SwingConstants.CENTER);
+vrL = new JLabel("Verbal Reasoning ", SwingConstants.CENTER);
+crsL = new JLabel("Music ", SwingConstants.CENTER);
+yrL = new JLabel("Yoruba ", SwingConstants.CENTER);
+frL = new JLabel("French ", SwingConstants.CENTER);
+musL = new JLabel("Music ", SwingConstants.CENTER);
+totalL = new JLabel("Total Score: ", SwingConstants.CENTER);
+avgL = new JLabel("Average: ", SwingConstants.CENTER);
+
+
+// Create the calculate JButton
+
+calculateBtn = new JButton("Calculate");
+cbHandler = new CalculateBtnHandler();
+calculateBtn.addActionListener(cbHandler);
+
+// create the Exit button
+exitBtn = new JButton("Exit");
+ebHandler = new ExitBtnHandler();
+exitBtn.addActionListener(ebHandler);
+
+// Set the pane and Layout of the window
+Container pane = getContentPane();
+pane.setLayout(new GridLayout(15, 10));
+
+pane.add(engL);
+pane.add(engTF);
+pane.add(mathL);
+pane.add(mathTF);
+pane.add(bscL);
+pane.add(bscTF);
+pane.add(faL);
+pane.add(faTF);
+pane.add(csL);
+pane.add(csTF);
+pane.add(qrL);
+pane.add(qrTF);
+pane.add(vrL);
+pane.add(vrTF);
+pane.add(crsL);
+pane.add(crsTF);
+pane.add(yrL);
+pane.add(yrTF);
+pane.add(frL);
+pane.add(frTF);
+pane.add(musL);
+pane.add(musTF);
+pane.add(totalL);
+pane.add(totalTF);
+pane.add(avgL);
+pane.add(avgTF);
+pane.add(calculateBtn);
+pane.add(exitBtn);
+
+// set the visibility
+setVisible(true);
+
+// set the Title
+setTitle("Average Score Calculator");
+
+// set the width / height of the window
+setSize(WIDTH, HEIGHT);
+
+totalTF.setEditable(false);
+avgTF.setEditable(false);
+
+// set the close window
+setDefaultCloseOperation(EXIT_ON_CLOSE);
+}
+private class CalculateBtnHandler implements ActionListener {
+
+public void actionPerformed(ActionEvent e) {
+
+int score1, score2, score3, score4, score5, score6, score7, 
+
+score8, 
+score9, score10, score11;
+
+score1 = Integer.parseInt(engTF.getText());
+score2 = Integer.parseInt(mathTF.getText());
+score3 = Integer.parseInt(bscTF.getText());
+score4 = Integer.parseInt(crsTF.getText());
+score5 = Integer.parseInt(csTF.getText());
+score6 = Integer.parseInt(faTF.getText());
+score7 = Integer.parseInt(musTF.getText());
+score8 = Integer.parseInt(frTF.getText());
+score9 = Integer.parseInt(qrTF.getText());
+score10 = Integer.parseInt(vrTF.getText());
+score11 = Integer.parseInt(yrTF.getText());
+
+int totalScore = score1 + score2 + score3 + score4 + score5 + 
+
+score6 + score7 + score8 + 
+score9 + score10 + score11;
+
+float avgScore = (totalScore)/ 1100;
+
+totalTF.setText("" + totalScore);
+avgTF.setText("" + avgScore);
+	
+}
+}
+private class ExitBtnHandler implements ActionListener {
+
+public void actionPerformed(ActionEvent e) {
+	
+	System.exit(0);
+}
+	
+}
+{
+
+Average avg = new Average();
+
+}
+	
+}
